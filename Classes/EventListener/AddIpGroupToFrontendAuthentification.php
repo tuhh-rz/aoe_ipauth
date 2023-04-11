@@ -10,7 +10,7 @@ class AddIpGroupToFrontendAuthentification
         /** @var \TYPO3\CMS\Core\Http\NormalizedParams $normalizedParams */
         $normalizedParams = $event->getRequest()->getAttribute('normalizedParams');
         $requestIp = $normalizedParams->getRemoteAddress();
-        $ipGroups = $this->getFeEntityService()->findAllGroupsWithIpAuthentication($requestIp);
+        $ipGroups = $this->getFeEntityService()->findAllGroupsAuthenticatedByIp($requestIp);
         $event->setGroups($event->getGroups() + $ipGroups);
     }
     
