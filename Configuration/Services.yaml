@@ -1,0 +1,12 @@
+---
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  AOE\AoeIpauth\EventListener\AddIpGroupToFrontendAuthentification:
+    tags:
+      - name: event.listener
+        identifier: 'AddIpGroupToFrontendAuthentification'
+        event:     TYPO3\CMS\Frontend\Authentication\ModifyResolvedFrontendGroupsEvent
